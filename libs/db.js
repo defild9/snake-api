@@ -1,11 +1,8 @@
 const { Pool } = require("pg");
+require("dotenv").config();
 
 const pool = new Pool({
-  user: "postgres",
-  password: "5423",
-  host: "localhost",
-  port: 5432,
-  database: "shake-game",
+  connectionString: process.env.DATABASE_URL,
 });
 
 module.exports = {
